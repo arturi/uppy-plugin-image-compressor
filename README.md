@@ -1,0 +1,1 @@
+# uppy-plugin-image-compressor
