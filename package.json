@@ -1,0 +1,15 @@
+{
+  "name": "uppy-image-compressor",
+  "version": "1.0.0",
+  "description": "Compresses images added to Uppy before upload, using compressorjs package",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["uppy", "uppy-plugin", "file uploader"],
+  "author": "Artur Paikin",
+  "license": "MIT",
+  "dependencies": {
+    "compressorjs": "^1.0.5"
+  }
+}
