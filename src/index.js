@@ -46,6 +46,10 @@ class UppyCompressor extends Plugin {
   install () {
     this.uppy.addPreProcessor(this.prepareUpload)
   }
+  
+  uninstall () {
+    this.uppy.removePreProcessor(this.prepareUpload)
+  }
 }
 
 module.exports = UppyCompressor
