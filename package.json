@@ -1,15 +1,48 @@
 {
-  "name": "uppy-image-compressor",
-  "version": "1.0.0",
-  "description": "Compresses images added to Uppy before upload, using compressorjs package",
-  "main": "src/index.js",
+  "name": "uppy-plugin-image-compressor",
+  "version": "1.1.0",
+  "description": "Compresses images added to Uppy before upload, using Compressor.js package (lossy compression)",
+  "repository": "https://github.com/arturi/uppy-plugin-image-compressor",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src/index.js -o lib/index.js",
+    "test": "jest",
+    "test:serve": "node test/server.js",
+    "prepublish": "npm run build"
   },
-  "keywords": ["uppy", "uppy-plugin", "file uploader"],
+  "keywords": [
+    "uppy",
+    "uppy-plugin",
+    "file uploader"
+  ],
   "author": "Artur Paikin",
   "license": "MIT",
+  "jest": {
+    "preset": "jest-puppeteer",
+    "globals": {
+      "PATH": "http://localhost:4444"
+    },
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ]
+  },
   "dependencies": {
+    "@uppy/core": "^1.6.0",
+    "@uppy/utils": "^2.1.0",
     "compressorjs": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.6.3",
+    "@uppy/dashboard": "^1.5.0",
+    "@uppy/file-input": "^1.4.0",
+    "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "jest-puppeteer": "^4.3.0",
+    "karmatic": "^1.4.0",
+    "puppeteer": "^2.0.0",
+    "webpack": "^4.41.2"
   }
 }
