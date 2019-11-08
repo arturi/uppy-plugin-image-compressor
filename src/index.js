@@ -98,6 +98,10 @@ class UppyImageCompressor extends Plugin {
   install () {
     this.uppy.addPreProcessor(this.prepareUpload)
   }
+  
+  uninstall () {
+    this.uppy.removePreProcessor(this.prepareUpload)
+  }
 }
 
 module.exports = UppyImageCompressor
